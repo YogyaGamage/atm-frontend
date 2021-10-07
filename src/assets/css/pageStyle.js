@@ -137,7 +137,6 @@ const pageStyle = {
     },
     width: "280px",
     height: "48px",
-    top: "370px",
     borderTopLeftRadius: 50,
     borderBottomLeftRadius: 50,
     borderTopRightRadius: 0,

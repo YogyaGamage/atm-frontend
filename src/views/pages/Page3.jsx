@@ -11,34 +11,46 @@ const useStyles = makeStyles(styles);
 
 export default function Page3() {
     const classes = useStyles();
-    return(
-        <div>
-            <div className={classes.centerContent}>
-                <p className={classes.enterdescp}> Select the transaction</p>
+    return (
+        <div class='containerPage2'>
+
+            <div class='rectangle rectangle1'></div>
+            <div class="centerContent">
+                <p class='enterdescp'> Select the transaction</p>
+                <div class='side'>
+                    <div class='sideButtonEmpty'></div>
+                    <div class='sideButtonContainer'>
+                        <div class='sideButton'>
+                            <Button
+                                size="large"
+                                className={classes.nextButton3}
+                                variant="contained"
+                                component={Link}
+                                to='/page4'
+                            //onSubmit={onSubmit}
+                            >
+                                Withdrawl
+                            </Button>
+
+                        </div>
+
+                        <div class='sideButton'>
+                            <Button
+                                size="large"
+                                className={classes.nextButton3}
+                                variant="contained"
+                                disabled
+                            //onSubmit={onSubmit}
+                            >
+                                Check Balance
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end', paddingBottom: "42px" }}>
-                <Button
-                    size="large"
-                    className={classes.nextButton3}
-                    variant="contained"
-                    component={Link}
-                    to='/page4'
-                    //onSubmit={onSubmit}
-                    >
-                    Withdrawl
-                </Button>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end', paddingBottom: "12px" }}>
-                <Button
-                    size="large"
-                    className={classes.nextButton3}
-                    variant="contained"
-                    disabled
-                    //onSubmit={onSubmit}
-                    >
-                    Check Balance
-                </Button>
-            </div>
+            <div class='rectangle rectangle2'></div>
+
         </div>
     );
 }

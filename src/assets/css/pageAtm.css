@@ -29,6 +29,30 @@
     flex-grow: 10;
 }
 
+.side{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.sideButtonEmpty{
+  flex-grow: 10;
+}
+
+.sideButtonContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sideButton{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .enterdescp {
     font-family: Montserrat;
     font-style: normal;
@@ -59,6 +83,18 @@
   .centerButtonAtm{
       display: flex;
       flex-wrap: wrap;
+  }
+
+  @media (max-width: 1025px) {
+    .side{
+      margin-top: 40vh;
+    }
+  
+    .sideButton{
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    
   }
 
   @media (max-width:601px) {
@@ -113,6 +149,14 @@
       .centerButtonAtm{
         width: 250px;
     }
+
+    .side{
+      margin-top: 5vh;
+    }
+
+    .sideButton{
+      width: 220px;
+    }
   }
 
   @media (max-width:361px) {
@@ -133,5 +177,13 @@
 
       .centerButtonAtm{
         width: 200px;
+    }
+
+    .side{
+      margin-top: 1vh;
+    }
+
+    .sideButton{
+      width: 150px;
     }
   }
