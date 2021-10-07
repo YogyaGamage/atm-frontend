@@ -17,6 +17,7 @@
   .header{
     font-family: "Montserrat";
     font-style: normal;
+    text-align: center;
     font-weight: 600;
     color: #3F3D56;
   }
@@ -28,6 +29,11 @@
   .header2{
     font-size: 50px;
     margin-top: -6vh;
+  }
+
+  .header3{
+    font-size: 35px;
+    margin-top: -4vh;
   }
 
   .description{
@@ -76,6 +82,11 @@
     height: 150px
 }
 
+.thankyou{
+  height: 250px;
+  margin-bottom: 10vh;
+}
+
 
   .image2{
       position: absolute;
@@ -95,7 +106,7 @@
 
 @media (max-width: 1025px) {
   .header1{
-    font-size: 75px;
+    font-size: 65px;
   }
 
   .header2{
@@ -103,8 +114,13 @@
     margin-top: -3vh;
   }
 
+  .header3{
+    font-size: 30px;
+    margin-top: -3vh;
+  }
+
   .description{
-    font-size: 20px;
+    font-size: 18px;
     line-height: 24px;
     margin-top: 0vh;
     margin-bottom: 3vh;
@@ -141,10 +157,13 @@
 
   .image1{
     margin-top: 20px;
-    height: 300px
+    height: 100px
 }
 
-
+.thankyou{
+  height: 150px;
+  margin-bottom: 5vh;
+}
   .image2{
       position: absolute;
       right: 0px;
@@ -159,18 +178,24 @@
     right: 0px;
     bottom: 0px;
     display: inline;
-    height: 20vh
+    width: 100vw;
+    height: 8vh
 }
 }
 
 @media (max-width: 769px) {
   .header1{
-    font-size: 75px;
+    font-size: 70px;
   }
 
   .header2{
     font-size: 50px;
     margin-top: -4vh;
+  }
+
+  .header3{
+    font-size: 30px;
+    margin-top: -3vh;
   }
 
   .description{
@@ -243,6 +268,11 @@
     margin-top: -4vh;
   }
 
+  .header3{
+    font-size: 25px;
+    margin-top: -2vh;
+  }
+
   .description{
     font-size: 16px;
     line-height: 24px;
@@ -306,6 +336,11 @@
     margin-top: -4vh;
   }
 
+  .header3{
+    font-size: 20px;
+    margin-top: -1vh;
+  }
+
   .description{
     font-size: 14px;
     line-height: 22px;
@@ -353,7 +388,6 @@
   position: absolute;
   right: 0px;
   bottom: 0px;
-  display: inline;
   width: 200vw;
   height: 200px;
 }

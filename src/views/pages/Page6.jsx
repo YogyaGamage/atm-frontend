@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // @material-ui/icons
 
 // core components
+import '../../assets/css/pageAtm.css';
 import styles from "../../assets/css/pageStyle";
 
 const useStyles = makeStyles(styles);

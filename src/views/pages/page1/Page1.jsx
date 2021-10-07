@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 
 // core components
 import styles from "../../../assets/css/pageStyle";
-import './page1.css';
+import '../../../assets/css/page1.css';
 
 const useStyles = makeStyles(styles);
 
