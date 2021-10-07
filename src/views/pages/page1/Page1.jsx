@@ -43,10 +43,12 @@ export default function Page1() {
                     </div>
                 </div>
             </div>
+            <img class="image2" src={'/images/page1-bottom.svg'} alt='' />
+            <img class="image3" src={'/images/page1-bottom2.svg'} alt='' />
 
             <div class="imageSection">
 
-                {/* <img class="image2" src={'/images/page1-bottom.svg'} alt='' /> */}
+
                 {/* <img class="image2" src='https://thumbs.dreamstime.com/b/rainbow-love-heart-background-red-wood-60045149.jpg' alt='' /> */}
 
             </div>
