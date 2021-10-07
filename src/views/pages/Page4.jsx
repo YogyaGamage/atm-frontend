@@ -22,7 +22,26 @@ export default function Page4() {
 
                 <img class="imageAtm" src={'/images/pwd.svg'} alt='' />
 
-                <p class='clickNext2'>Click next to continue</p>
+                <div class='side'>
+
+                    <div class='sideButtonEmpty'></div>
+                    <div class='sideButtonContainer'>
+                        <div class='sideButton'>
+                            <Button
+                                size="large"
+                                className={classes.nextButton3}
+                                variant="contained"
+                                component={Link}
+                                to='/page5'
+                            //onSubmit={onSubmit}
+                            >
+                                Continue
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+
+                {/*  <p class='clickNext2'>Click next to continue</p>
 
                 <div class='centerButtonAtm'>
                     <Button
@@ -36,7 +55,7 @@ export default function Page4() {
                         Next
                     </Button>
                 </div>
-
+ */}
             </div>
 
             <div class='rectangle rectangle2'></div>

@@ -11,30 +11,42 @@ const useStyles = makeStyles(styles);
 
 export default function Page5() {
     const classes = useStyles();
-    if (Math.random() < 0.5){
+    if (Math.random() < 0.5) {
         var randLink = '/page6';
     }
-    else{
+    else {
         var randLink = '/page7'
     }
-    
-    return(
-        <div>
-            <div className={classes.centerContent}>
-                <p className={classes.enterdescp}> Enter the Amount to Withdraw</p>
+
+    return (
+        <div class='containerPage2'>
+
+            <div class='rectangle rectangle1'></div>
+
+            <div class="centerContent">
+                <p class='enterdescp'> Enter the Amount to Withdraw</p>
+                <img class="imageAtm" src={'/images/amount.svg'} alt='' />
+                <div class='side'>
+
+                    <div class='sideButtonEmpty'></div>
+                    <div class='sideButtonContainer'>
+                        <div class='sideButton'>
+                            <Button
+                                size="large"
+                                className={classes.nextButton3}
+                                variant="contained"
+                                component={Link}
+                                to={randLink}
+                            //onSubmit={onSubmit}
+                            >
+                                Continue
+                            </Button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button
-                    size="large"
-                    className={classes.nextButton3}
-                    variant="contained"
-                    component={Link}
-                    to={randLink}
-                    //onSubmit={onSubmit}
-                    >
-                    Continue
-                </Button>
-            </div>
+
+            <div class='rectangle rectangle2'></div>
         </div>
     );
 }
