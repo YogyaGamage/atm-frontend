@@ -11,39 +11,51 @@ const useStyles = makeStyles(styles);
 
 export default function Page6() {
     const classes = useStyles();
-    
-    return(
-        <div>
-            <div className={classes.centerContent}>
-                <p className={classes.enterdescp}> For this transaction a receipt will not be produced</p>
-            </div>
-            <div style={{ display: 'flex',flexDirection: "row" }}>
-            <div style={{ display: 'flex', flexShrink: 0}}>
-                    <Button
-                        size="large"
-                        className={classes.nextButton4}
-                        variant="contained"
-                        component={Link}
-                        to='/page8'
-                        //onSubmit={onSubmit}
-                        >
-                        Need a receipt
-                    </Button>
+
+    return (
+        <div class='containerPage2'>
+
+            <div class='rectangle rectangle1'></div>
+            <div class="centerContent">
+                <p class='enterdescp'>For this transaction a receipt will not be produced</p>
+
+                <div class='side'>
+                    <div class='sideButtonContainer'>
+                        <div class='reciept sidePage6 sideButton'>
+                            <Button
+                                size="large"
+                                className={classes.nextButton4}
+                                variant="contained"
+                                component={Link}
+                                to='/page8'
+                            //onSubmit={onSubmit}
+                            >
+                                Need a receipt
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div class='sideButtonEmpty'></div>
+
+                    <div class='sideButtonContainer'>
+                        <div class='sidePage6 sideButton'>
+                            <Button
+                                size="large"
+                                className={classes.nextButton3}
+                                variant="outlined"
+                                component={Link}
+                                to='/page8'
+                            //onSubmit={onSubmit}
+                            >
+                                Continue
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-                <div style={{ display: 'flex', flex: 1}}></div>
-                <div style={{ display: 'flex', flexShrink: 0}}>
-                    <Button
-                        size="large"
-                        className={classes.nextButton3}
-                        variant="outlined"
-                        component={Link}
-                        to='/page8'
-                        //onSubmit={onSubmit}
-                        >
-                        Continue
-                    </Button>
-                </div>
             </div>
+
+            <div class='rectangle rectangle2'></div>
+
         </div>
     );
 }

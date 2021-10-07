@@ -147,11 +147,9 @@ const pageStyle = {
   //page6
 
   nextButton4: {
-    border: "2px solid #3F3D56",
     color: '#3F3D56',
     width: "280px",
     height: "48px",
-    top: "370px",
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
     borderTopRightRadius: 50,

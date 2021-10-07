@@ -122,6 +122,9 @@
       .centerButtonAtm{
         width: 300px;
     }
+    .sidePage6{
+      width: 220px;
+    }
   }
 
   @media (max-width:441px) {
@@ -157,6 +160,14 @@
     .sideButton{
       width: 220px;
     }
+
+    .sidePage6{
+      width: 170px;
+    }
+
+    .reciept{
+      width: 150px;
+    }
   }
 
   @media (max-width:361px) {
@@ -185,5 +196,13 @@
 
     .sideButton{
       width: 150px;
+    }
+
+    .sidePage6{
+      width: 150px;
+    }
+
+    .reciept{
+      width: 110px;
     }
   }
