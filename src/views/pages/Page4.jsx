@@ -5,30 +5,41 @@ import { Link } from 'react-router-dom';
 // @material-ui/icons
 
 // core components
+import '../../assets/css/pageAtm.css';
 import styles from "../../assets/css/pageStyle";
 
 const useStyles = makeStyles(styles);
 
 export default function Page4() {
     const classes = useStyles();
-    return(
-        <div>
-            <div className={classes.centerContent}>
-                <p className={classes.enterdescp}> Enter the Password</p>
-                <p className={classes.clickNext2}>Click next to continue</p>
-                <div style={{paddingBottom: "12px"}}>
+    return (
+        <div class='containerPage2'>
+
+            <div class='rectangle rectangle1'></div>
+
+            <div class="centerContent">
+                <p class="enterdescp"> Enter the Password</p>
+
+                <img class="imageAtm" src={'/images/pwd.svg'} alt='' />
+
+                <p class='clickNext2'>Click next to continue</p>
+
+                <div class='centerButtonAtm'>
                     <Button
                         size="large"
                         className={classes.nextButton2}
                         variant="contained"
                         component={Link}
                         to='/page5'
-                        //onSubmit={onSubmit}
-                        >
+                    //onSubmit={onSubmit}
+                    >
                         Next
                     </Button>
                 </div>
+
             </div>
+
+            <div class='rectangle rectangle2'></div>
         </div>
     );
 }

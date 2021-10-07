@@ -123,7 +123,6 @@ const pageStyle = {
     margin: "auto",
     width: "328px",
     height: "48px",
-    top: "530px",
     borderRadius: 50,
     boxShadow: ['none']
   },
