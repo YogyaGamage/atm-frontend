@@ -7,8 +7,13 @@ import { Link } from 'react-router-dom';
 // core components
 import '../../assets/css/pageAtm.css';
 import styles from "../../assets/css/pageStyle";
+import Cookies from 'universal-cookie';
+import history from '../../history'
 
 const useStyles = makeStyles(styles);
+
+const cookies = new Cookies();
+cookies.set('visited', 'true', { path: '/' });
 
 export default function Page8() {
 

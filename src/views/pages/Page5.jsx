@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 // core components
 import '../../assets/css/pageAtm.css';
 import styles from "../../assets/css/pageStyle";
+import history from '../../history'
 
 const useStyles = makeStyles(styles);
 
@@ -17,6 +18,11 @@ export default function Page5() {
     }
     else {
         var randLink = '/page7'
+    }
+
+    const setPage5= () => {
+        history.push('/page6')
+        localStorage.setItem("page1", true);
     }
 
     return (
@@ -38,6 +44,7 @@ export default function Page5() {
                                 variant="contained"
                                 component={Link}
                                 to={randLink}
+                                onClick={() => { setPage5() }}
                             //onSubmit={onSubmit}
                             >
                                 Continue

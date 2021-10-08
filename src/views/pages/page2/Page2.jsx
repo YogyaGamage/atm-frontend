@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
@@ -8,11 +8,20 @@ import { Link } from 'react-router-dom';
 import './page2.css';
 import '../../../assets/css/pageAtm.css';
 import styles from "../../../assets/css/pageStyle";
+import history from '../../../history'
 
 const useStyles = makeStyles(styles);
 
 export default function Page2() {
     const classes = useStyles();
+    const setPage2= () => {
+        history.push('/page3')
+        localStorage.setItem("page1", true);
+    }
+
+
+
+    console.log(localStorage.getItem('page1'))
     return (
         <div class='containerPage2'>
 
@@ -29,6 +38,7 @@ export default function Page2() {
                         variant="contained"
                         component={Link}
                         to='/page3'
+                        onClick={() => { setPage2() }}
                     //onSubmit={onSubmit}
                     >
                         Next

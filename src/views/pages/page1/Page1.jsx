@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
@@ -9,11 +9,33 @@ import Grid from '@material-ui/core/Grid';
 // core components
 import styles from "../../../assets/css/pageStyle";
 import '../../../assets/css/page1.css';
+import Cookies from 'universal-cookie';
+import history from '../../../history'
 
 const useStyles = makeStyles(styles);
 
+const cookies = new Cookies();
+
 export default function Page1() {
     const classes = useStyles();
+    console.log(cookies.get('visited'),'ghyuui')
+    if (cookies.get('visited')=='true') {
+        var nextLink = '/page2'; ////////change
+    }
+    else {
+        var nextLink = '/page2';
+    }
+    const setPage1= () => {
+        history.push(nextLink)
+        localStorage.setItem("page1", true);
+    }
+
+    useEffect(() => {
+        window.addEventListener("popstate", () => {
+        history.go(1);
+        })
+    }, []);
+
     return (
         <div class="container">
             <div class="textSection">
@@ -34,8 +56,7 @@ export default function Page1() {
                             size="large"
                             className={classes.nextButton1}
                             variant="contained"
-                            component={Link}
-                            to='/page2'
+                            onClick={() => { setPage1() }}
                         //onSubmit={onSubmit}
                         >
                             Next

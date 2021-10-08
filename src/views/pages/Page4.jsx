@@ -7,11 +7,16 @@ import { Link } from 'react-router-dom';
 // core components
 import '../../assets/css/pageAtm.css';
 import styles from "../../assets/css/pageStyle";
+import history from '../../history'
 
 const useStyles = makeStyles(styles);
 
 export default function Page4() {
     const classes = useStyles();
+    const setPage4= () => {
+        history.push('/page5')
+        localStorage.setItem("page1", true);
+    }
     return (
         <div class='containerPage2'>
 
@@ -33,6 +38,7 @@ export default function Page4() {
                                 variant="contained"
                                 component={Link}
                                 to='/page5'
+                                onClick={() => { setPage4() }}
                             //onSubmit={onSubmit}
                             >
                                 Continue
