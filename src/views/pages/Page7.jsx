@@ -37,6 +37,9 @@ export default function Page7() {
     }
 
     const handleSubmit = () => {
+        localStorage.setItem("atmdemopage6", 'visited');
+        localStorage.removeItem("atmdemopage5");
+        ///////////
         let headers = new Headers();
         headers.append('Access-Control-Allow-Origin', 'http://localhost:8888');
         headers.append('Access-Control-Allow-Credentials', 'true');
@@ -52,47 +55,55 @@ export default function Page7() {
           }
         });
     };
+    if (localStorage.getItem("atmdemopage5")=="visited"){
+        return (
+            <div class='containerPage2'>
 
-    return (
-        <div class='containerPage2'>
+                <div class='rectangle rectangle1'></div>
+                <div class="centerContent">
+                    <p class='enterdescp'>  Do you want a receipt for this transaction?</p>
+                    <div class='side'>
+                        <div class='sideButtonEmpty'></div>
+                        <div class='sideButtonContainer'>
+                            <div class='sideButton'>
+                                <Button
+                                    size="large"
+                                    className={classes.nextButton3}
+                                    variant="contained"
+                                    component={Link}
+                                    to='/page8'
+                                    onClick={() => { getResult1() }}
+                                >
+                                    Yes
+                                </Button>
+                            </div>
+                            <div class='sideButton'>
+                                <Button
+                                    size="large"
+                                    className={classes.nextButton3}
+                                    variant="contained"
+                                    component={Link}
+                                    to='/page8'
+                                    onClick={() => { getResult2() }}
+                                >
+                                    No
+                                </Button>
+                            </div>
 
-            <div class='rectangle rectangle1'></div>
-            <div class="centerContent">
-                <p class='enterdescp'>  Do you want a receipt for this transaction?</p>
-                <div class='side'>
-                    <div class='sideButtonEmpty'></div>
-                    <div class='sideButtonContainer'>
-                        <div class='sideButton'>
-                            <Button
-                                size="large"
-                                className={classes.nextButton3}
-                                variant="contained"
-                                component={Link}
-                                to='/page8'
-                                onClick={() => { getResult1() }}
-                            >
-                                Yes
-                            </Button>
+
                         </div>
-                        <div class='sideButton'>
-                            <Button
-                                size="large"
-                                className={classes.nextButton3}
-                                variant="contained"
-                                component={Link}
-                                to='/page8'
-                                onClick={() => { getResult2() }}
-                            >
-                                No
-                            </Button>
-                        </div>
-
-
                     </div>
                 </div>
-            </div>
-            <div class='rectangle rectangle2'></div>
+                <div class='rectangle rectangle2'></div>
 
-        </div>
-    );
+            </div>
+        );
+    }
+    else{
+        history.push('/')
+        return(
+            <div></div>
+        )
+    } 
+
 }

@@ -16,37 +16,41 @@ export default function Page2() {
     const classes = useStyles();
     const setPage2= () => {
         history.push('/page3')
-        localStorage.setItem("page1", true);
+        localStorage.setItem("atmdemopage2", 'visited');
+        localStorage.removeItem("atmdemopage1");
     }
 
+    if (localStorage.getItem("atmdemopage1")=="visited"){
+        return (
+            <div class='containerPage2'>
 
+                <div class='rectangle rectangle1'></div>
 
-    console.log(localStorage.getItem('page1'))
-    return (
-        <div class='containerPage2'>
-
-            <div class='rectangle rectangle1'></div>
-
-            <div class="centerContent">
-                <p class="enterdescp"> Enter your ATM card</p>
-                <p class='clickNext2'>Click next to continue</p>
-                <div class='centerButtonAtm'>
-                    <Button
-                        size="large"
-                        className={classes.nextButton2}
-                        container
-                        variant="contained"
-                        component={Link}
-                        to='/page3'
-                        onClick={() => { setPage2() }}
-                    //onSubmit={onSubmit}
-                    >
-                        Next
-                    </Button>
+                <div class="centerContent">
+                    <p class="enterdescp"> Enter your ATM card</p>
+                    <p class='clickNext2'>Click next to continue</p>
+                    <div class='centerButtonAtm'>
+                        <Button
+                            size="large"
+                            className={classes.nextButton2}
+                            container
+                            variant="contained"
+                            onClick={() => { setPage2() }}
+                        //onSubmit={onSubmit}
+                        >
+                            Next
+                        </Button>
+                    </div>
                 </div>
-            </div>
 
-            <div class='rectangle rectangle2'></div>
-        </div>
-    );
+                <div class='rectangle rectangle2'></div>
+            </div>
+        );
+    }
+    else{
+        history.push('/')
+        return(
+            <div></div>
+        )
+    }
 }

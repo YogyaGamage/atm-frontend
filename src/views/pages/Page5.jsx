@@ -21,40 +21,47 @@ export default function Page5() {
     }
 
     const setPage5= () => {
-        history.push('/page6')
-        localStorage.setItem("page1", true);
+        history.push(randLink)
+        localStorage.setItem("atmdemopage5", 'visited');
+        localStorage.removeItem("atmdemopage4");
     }
 
-    return (
-        <div class='containerPage2'>
+    if (localStorage.getItem("atmdemopage4")=="visited"){
+        return (
+            <div class='containerPage2'>
 
-            <div class='rectangle rectangle1'></div>
+                <div class='rectangle rectangle1'></div>
 
-            <div class="centerContent">
-                <p class='enterdescp'> Enter the Amount to Withdraw</p>
-                <img class="imageAtm" src={'/images/amount.svg'} alt='' />
-                <div class='side'>
+                <div class="centerContent">
+                    <p class='enterdescp'> Enter the Amount to Withdraw</p>
+                    <img class="imageAtm" src={'/images/amount.svg'} alt='' />
+                    <div class='side'>
 
-                    <div class='sideButtonEmpty'></div>
-                    <div class='sideButtonContainer'>
-                        <div class='sideButton'>
-                            <Button
-                                size="large"
-                                className={classes.nextButton3}
-                                variant="contained"
-                                component={Link}
-                                to={randLink}
-                                onClick={() => { setPage5() }}
-                            //onSubmit={onSubmit}
-                            >
-                                Continue
-                            </Button>
+                        <div class='sideButtonEmpty'></div>
+                        <div class='sideButtonContainer'>
+                            <div class='sideButton'>
+                                <Button
+                                    size="large"
+                                    className={classes.nextButton3}
+                                    variant="contained"
+                                    onClick={() => { setPage5() }}
+                                //onSubmit={onSubmit}
+                                >
+                                    Continue
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class='rectangle rectangle2'></div>
-        </div>
-    );
+                <div class='rectangle rectangle2'></div>
+            </div>
+        );
+    }
+    else{
+        history.push('/')
+        return(
+            <div></div>
+        )
+    }  
 }

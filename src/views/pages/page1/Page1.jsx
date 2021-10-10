@@ -18,16 +18,15 @@ const cookies = new Cookies();
 
 export default function Page1() {
     const classes = useStyles();
-    console.log(cookies.get('visited'),'ghyuui')
-    if (cookies.get('visited')=='true') {
-        var nextLink = '/page2'; ////////change
+    if (cookies.get('visitedatmsite')=='true') {
+        var nextLink = '/page9'; ////////change to test
     }
     else {
         var nextLink = '/page2';
     }
     const setPage1= () => {
         history.push(nextLink)
-        localStorage.setItem("page1", true);
+        localStorage.setItem("atmdemopage1", 'visited');
     }
 
     useEffect(() => {

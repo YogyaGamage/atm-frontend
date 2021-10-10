@@ -33,7 +33,11 @@ export default function Page6() {
         result = 2; //no
         handleSubmit();
     }
+
     const handleSubmit = () => {
+        localStorage.setItem("atmdemopage6", 'visited');
+        localStorage.removeItem("atmdemopage5");
+        /////
         let headers = new Headers();
         headers.append('Access-Control-Allow-Origin', 'http://localhost:8888');
         headers.append('Access-Control-Allow-Credentials', 'true');
@@ -49,53 +53,60 @@ export default function Page6() {
           }
         });
     };
+    if (localStorage.getItem("atmdemopage5")=="visited"){
+        return (
+            <div class='containerPage2'>
 
-    return (
-        <div class='containerPage2'>
+                <div class='rectangle rectangle1'></div>
+                <div class="centerContent">
+                    <p class='enterdescp'>For this transaction a receipt will not be produced</p>
 
-            <div class='rectangle rectangle1'></div>
-            <div class="centerContent">
-                <p class='enterdescp'>For this transaction a receipt will not be produced</p>
-
-                <div class='side'>
-                    <div class='sideButtonContainer'>
-                        <div class='reciept sidePage6 sideButton'>
-                            <Button
-                                size="large"
-                                className={classes.nextButton4}
-                                variant="contained"
-                                component={Link}
-                                to='/page8'
-                                onClick={() => { getResult1() }}
-                            //onSubmit={onSubmit}
-                            >
-                                Need a receipt
-                            </Button>
+                    <div class='side'>
+                        <div class='sideButtonContainer'>
+                            <div class='reciept sidePage6 sideButton'>
+                                <Button
+                                    size="large"
+                                    className={classes.nextButton4}
+                                    variant="contained"
+                                    component={Link}
+                                    to='/page8'
+                                    onClick={() => { getResult1() }}
+                                //onSubmit={onSubmit}
+                                >
+                                    Need a receipt
+                                </Button>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class='sideButtonEmpty'></div>
+                        <div class='sideButtonEmpty'></div>
 
-                    <div class='sideButtonContainer'>
-                        <div class='sidePage6 sideButton'>
-                            <Button
-                                size="large"
-                                className={classes.nextButton3}
-                                variant="outlined"
-                                component={Link}
-                                to='/page8'
-                                onClick={() => { getResult2() }}
-                            //onSubmit={onSubmit}
-                            >
-                                Continue
-                            </Button>
+                        <div class='sideButtonContainer'>
+                            <div class='sidePage6 sideButton'>
+                                <Button
+                                    size="large"
+                                    className={classes.nextButton3}
+                                    variant="outlined"
+                                    component={Link}
+                                    to='/page8'
+                                    onClick={() => { getResult2() }}
+                                //onSubmit={onSubmit}
+                                >
+                                    Continue
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class='rectangle rectangle2'></div>
+
             </div>
-
-            <div class='rectangle rectangle2'></div>
-
-        </div>
-    );
+        );
+    }
+    else{
+        history.push('/')
+        return(
+            <div></div>
+        )
+    } 
 }

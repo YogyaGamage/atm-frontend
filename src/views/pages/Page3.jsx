@@ -15,49 +15,56 @@ export default function Page3() {
     const classes = useStyles();
     const setPage3= () => {
         history.push('/page4')
-        localStorage.setItem("page1", true);
+        localStorage.setItem("atmdemopage3", 'visited');
+        localStorage.removeItem("atmdemopage2");
     }
-    return (
-        <div class='containerPage2'>
+    if (localStorage.getItem("atmdemopage2")=="visited"){
+        return (
+            <div class='containerPage2'>
 
-            <div class='rectangle rectangle1'></div>
-            <div class="centerContent">
-                <p class='enterdescp'> Select the transaction</p>
-                <div class='side'>
-                    <div class='sideButtonEmpty'></div>
-                    <div class='sideButtonContainer'>
-                        <div class='sideButton'>
-                            <Button
-                                size="large"
-                                className={classes.nextButton3}
-                                variant="contained"
-                                component={Link}
-                                to='/page4'
-                                onClick={() => { setPage3() }}
-                            //onSubmit={onSubmit}
-                            >
-                                Withdrawl
-                            </Button>
+                <div class='rectangle rectangle1'></div>
+                <div class="centerContent">
+                    <p class='enterdescp'> Select the transaction</p>
+                    <div class='side'>
+                        <div class='sideButtonEmpty'></div>
+                        <div class='sideButtonContainer'>
+                            <div class='sideButton'>
+                                <Button
+                                    size="large"
+                                    className={classes.nextButton3}
+                                    variant="contained"
+                                    onClick={() => { setPage3() }}
+                                //onSubmit={onSubmit}
+                                >
+                                    Withdrawl
+                                </Button>
 
-                        </div>
+                            </div>
 
-                        <div class='sideButton'>
-                            <Button
-                                size="large"
-                                className={classes.nextButton3}
-                                variant="contained"
-                                disabled
-                            //onSubmit={onSubmit}
-                            >
-                                Check Balance
-                            </Button>
+                            <div class='sideButton'>
+                                <Button
+                                    size="large"
+                                    className={classes.nextButton3}
+                                    variant="contained"
+                                    disabled
+                                //onSubmit={onSubmit}
+                                >
+                                    Check Balance
+                                </Button>
+                            </div>
                         </div>
                     </div>
+
                 </div>
+                <div class='rectangle rectangle2'></div>
 
             </div>
-            <div class='rectangle rectangle2'></div>
-
-        </div>
-    );
+        );
+    }
+    else{
+        history.push('/')
+        return(
+            <div></div>
+        )
+    }
 }
