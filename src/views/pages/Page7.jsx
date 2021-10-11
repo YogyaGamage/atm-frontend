@@ -51,9 +51,15 @@ export default function Page7() {
         axios.post( 'http://localhost:8888/save' , variables, headers)
            .then(response => {
                 if (response) {
-                  console.log("done")
-          }
-        });
+                  console.log("done1")
+                }
+            });
+        axios.post( 'http://localhost:8888/savefirebase' , variables, headers)
+            .then(response => {
+                if (response) {
+                    console.log("done2")
+                }
+            });
     };
     if (localStorage.getItem("atmdemopage5")=="visited"){
         return (
