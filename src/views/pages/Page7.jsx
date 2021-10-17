@@ -41,20 +41,20 @@ export default function Page7() {
         localStorage.removeItem("atmdemopage5");
         ///////////
         let headers = new Headers();
-        headers.append('Access-Control-Allow-Origin', 'http://localhost:8888');
+        headers.append('Access-Control-Allow-Origin', 'https://atm-demo-backend.herokuapp.com/');
         headers.append('Access-Control-Allow-Credentials', 'true');
         const variables = {
           type: type,
           device: device,
           result: result,
         }
-        axios.post( 'http://localhost:8888/save' , variables, headers)
+        axios.post( 'https://atm-demo-backend.herokuapp.com/save' , variables, headers)
            .then(response => {
                 if (response) {
                   console.log("done1")
                 }
             });
-        axios.post( 'http://localhost:8888/savefirebase' , variables, headers)
+        axios.post( 'https://atm-demo-backend.herokuapp.com/savefirebase' , variables, headers)
             .then(response => {
                 if (response) {
                     console.log("done2")
