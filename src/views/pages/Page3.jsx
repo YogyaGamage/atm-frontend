@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
@@ -18,6 +18,15 @@ export default function Page3() {
         localStorage.setItem("atmdemopage3", 'visited');
         localStorage.removeItem("atmdemopage2");
     }
+    useEffect(() => {
+        let notset=true
+        window.addEventListener("popstate", () => {
+            if (notset){
+            alert('You cannot go back to the previous step. You will be redirected to the firstpage.');
+            notset=false
+            }
+        }) 
+    }, []);
     if (localStorage.getItem("atmdemopage2")=="visited"){
         return (
             <div class='containerPage2'>
